@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "991076767806",
+    "firebase_url": "https://docme-3a35c.firebaseio.com",
+    "project_id": "docme-3a35c",
+    "storage_bucket": "docme-3a35c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991076767806:android:4c6b05ae8a503a5f02196f",
+        "android_client_info": {
+          "package_name": "com.fire.docme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991076767806-2of2scsf863r6aoag8mqh18u8d26fj1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0tYEEyRupIe2uXVKCwHm5GeM7J9oCqpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991076767806-2of2scsf863r6aoag8mqh18u8d26fj1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

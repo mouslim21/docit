@@ -1,0 +1,7 @@
+#Sat Jun 20 15:16:16 CEST 2020
+base.0=F\:\\myapp\\docme\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=F\:\\myapp\\docme\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
