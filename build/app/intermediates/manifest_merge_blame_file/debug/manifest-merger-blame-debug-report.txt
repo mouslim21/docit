@@ -20,19 +20,19 @@
 16    <uses-permission android:name="android.permission.WAKE_LOCK" />
 16-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:25:5-68
 16-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:25:22-65
-17    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+17    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
 17-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:26:5-110
 17-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:26:22-107
-18
-19    <uses-feature
-19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
-20        android:glEsVersion="0x00020000"
-20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
-21        android:required="true" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-21-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
-22    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-22-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:26:5-82
-22-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:26:22-79
+18    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+18-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:26:5-82
+18-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:26:22-79
+19
+20    <uses-feature
+20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
+21        android:glEsVersion="0x00020000"
+21-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
+22        android:required="true" />
+22-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
 23    <!--
 24 io.flutter.app.FlutterApplication is an android.app.Application that
 25         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -122,139 +122,209 @@
 80-->F:\myapp\docme\android\app\src\main\AndroidManifest.xml:47:13-30
 81
 82        <service
-82-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+82-->[:firebase_auth] F:\myapp\docme\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 83            android:name="com.google.firebase.components.ComponentDiscoveryService"
-83-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+83-->[:firebase_auth] F:\myapp\docme\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 84            android:directBootAware="true"
-84-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+84-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 85            android:exported="false" >
-85-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:29:13-37
+85-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:35:13-37
 86            <meta-data
-86-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-87                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-87-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
+86-->[:firebase_auth] F:\myapp\docme\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+87                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
+87-->[:firebase_auth] F:\myapp\docme\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-122
 88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+88-->[:firebase_auth] F:\myapp\docme\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 89            <meta-data
-89-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-90                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-90-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
+89-->[:cloud_firestore] F:\myapp\docme\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+90                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
+90-->[:cloud_firestore] F:\myapp\docme\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-133
 91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+91-->[:cloud_firestore] F:\myapp\docme\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 92            <meta-data
-92-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:30:13-32:85
-93                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-93-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:31:17-139
+92-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
+93-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
 94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:32:17-82
+94-->[:firebase_database] F:\myapp\docme\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 95            <meta-data
-95-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\797f4540ae862267036f125a188ade4e\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
-96                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-96-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\797f4540ae862267036f125a188ade4e\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
+95-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+96-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
 97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\797f4540ae862267036f125a188ade4e\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+97-->[:firebase_core] F:\myapp\docme\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 98            <meta-data
-98-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:32:13-34:85
-99                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-99-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:33:17-96
+98-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:36:13-38:85
+99                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+99-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:37:17-109
 100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:34:17-82
-101        </service>
-102
-103        <receiver
-103-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:29:9-33:20
-104            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-104-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:30:13-85
-105            android:enabled="true"
-105-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:31:13-35
-106            android:exported="false" >
-106-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:32:13-37
-107        </receiver>
-108        <receiver
-108-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:34:9-42:20
-109            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-109-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:35:13-100
-110            android:enabled="true"
-110-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:36:13-35
-111            android:exported="true"
-111-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:37:13-36
-112            android:permission="android.permission.INSTALL_PACKAGES" >
-112-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:38:13-69
-113            <intent-filter>
-113-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:39:13-41:29
-114                <action android:name="com.android.vending.INSTALL_REFERRER" />
-114-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:40:17-79
-114-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:40:25-76
-115            </intent-filter>
-116        </receiver>
-117
-118        <service
-118-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:44:9-47:40
-119            android:name="com.google.android.gms.measurement.AppMeasurementService"
-119-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:45:13-84
-120            android:enabled="true"
-120-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:46:13-35
-121            android:exported="false" />
-121-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:47:13-37
-122        <service
-122-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:48:9-52:72
-123            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-123-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:49:13-87
-124            android:enabled="true"
-124-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:50:13-35
-125            android:exported="false"
-125-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:51:13-37
-126            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
-126-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:52:13-69
-127        <uses-library
-127-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
-128            android:name="org.apache.http.legacy"
-128-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
-129            android:required="false" />
-129-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\e92f845581d2eae12abc92f5a974f575\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
-130
-131        <receiver
-131-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:37:9-44:20
-132            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-132-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:38:13-78
-133            android:exported="true"
-133-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:39:13-36
-134            android:permission="com.google.android.c2dm.permission.SEND" >
-134-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:40:13-73
-135            <intent-filter>
-135-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:41:13-43:29
-136                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-136-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:42:17-81
-136-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:42:25-78
-137            </intent-filter>
-138        </receiver>
-139
-140        <provider
-140-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
-141            android:name="com.google.firebase.provider.FirebaseInitProvider"
-141-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
-142            android:authorities="com.fire.docme.firebaseinitprovider"
-142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
-143            android:exported="false"
-143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
-144            android:initOrder="100" />
-144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7d507d8fd1d57fbfd5a23ca2148be4b0\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
-145
-146        <activity
-146-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\f95b969d38b6c668807e8686e1c522f2\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-147            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-147-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\f95b969d38b6c668807e8686e1c522f2\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-148            android:exported="false"
-148-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\f95b969d38b6c668807e8686e1c522f2\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-149            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-149-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\f95b969d38b6c668807e8686e1c522f2\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-150
-151        <meta-data
-151-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\25594fedbc310412231561fca8074915\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-152            android:name="com.google.android.gms.version"
-152-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\25594fedbc310412231561fca8074915\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-153            android:value="@integer/google_play_services_version" />
-153-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\25594fedbc310412231561fca8074915\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-154    </application>
-155
-156</manifest>
+100-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:38:17-82
+101            <meta-data
+101-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:30:13-32:85
+102                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+102-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:31:17-139
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\78d5b095a4527b03c424ae33803bf057\play-services-measurement-api-17.2.2\AndroidManifest.xml:32:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7f857437341b47c4114627524410c961\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:20:13-22:85
+105                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+105-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7f857437341b47c4114627524410c961\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:21:17-111
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\7f857437341b47c4114627524410c961\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:22:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4060fbfc7a4ffc2c3e99e8cb2d2d8677\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
+108                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+108-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4060fbfc7a4ffc2c3e99e8cb2d2d8677\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-database:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4060fbfc7a4ffc2c3e99e8cb2d2d8677\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:32:13-34:85
+111                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+111-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:33:17-96
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:34:17-82
+113        </service>
+114
+115        <activity
+115-->[:url_launcher] F:\myapp\docme\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+116            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+116-->[:url_launcher] F:\myapp\docme\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+117            android:exported="false"
+117-->[:url_launcher] F:\myapp\docme\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+118            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+118-->[:url_launcher] F:\myapp\docme\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+119        <activity
+119-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:24:9-31:50
+120            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+120-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:25:13-85
+121            android:excludeFromRecents="true"
+121-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:26:13-46
+122            android:exported="true"
+122-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:27:13-36
+123            android:launchMode="singleTask"
+123-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:28:13-44
+124            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+124-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:29:13-102
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\4b424f00e3b15d55b237ff6dc176f387\firebase-auth-19.2.0\AndroidManifest.xml:30:13-72
+126
+127        <receiver
+127-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:29:9-33:20
+128            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+128-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:30:13-85
+129            android:enabled="true"
+129-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:31:13-35
+130            android:exported="false" >
+130-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:32:13-37
+131        </receiver>
+132        <receiver
+132-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:34:9-42:20
+133            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+133-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:35:13-100
+134            android:enabled="true"
+134-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:36:13-35
+135            android:exported="true"
+135-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:37:13-36
+136            android:permission="android.permission.INSTALL_PACKAGES" >
+136-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:38:13-69
+137            <intent-filter>
+137-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:39:13-41:29
+138                <action android:name="com.android.vending.INSTALL_REFERRER" />
+138-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:40:17-79
+138-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:40:25-76
+139            </intent-filter>
+140        </receiver>
+141
+142        <service
+142-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:44:9-47:40
+143            android:name="com.google.android.gms.measurement.AppMeasurementService"
+143-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:45:13-84
+144            android:enabled="true"
+144-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:46:13-35
+145            android:exported="false" />
+145-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:47:13-37
+146        <service
+146-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:48:9-52:72
+147            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+147-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:49:13-87
+148            android:enabled="true"
+148-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:50:13-35
+149            android:exported="false"
+149-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:51:13-37
+150            android:permission="android.permission.BIND_JOB_SERVICE" />
+150-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\8b0e0f87eb0cbe11ae68ccdf1e3c9526\play-services-measurement-17.2.2\AndroidManifest.xml:52:13-69
+151
+152        <activity
+152-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+153            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+153-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+154            android:excludeFromRecents="true"
+154-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+155            android:exported="false"
+155-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+156            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+156-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+157        <!--
+158            Service handling Google Sign-In user revocation. For apps that do not integrate with
+159            Google Sign-In, this service will never be started.
+160        -->
+161        <service
+161-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+162            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+162-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+163            android:exported="true"
+163-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+164            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+164-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\47737864488862dd3041523ace84175a\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+165
+166        <receiver
+166-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:37:9-44:20
+167            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+167-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:38:13-78
+168            android:exported="true"
+168-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:39:13-36
+169            android:permission="com.google.android.c2dm.permission.SEND" >
+169-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:40:13-73
+170            <intent-filter>
+170-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:41:13-43:29
+171                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+171-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:42:17-81
+171-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\d7d6ab92a885fd8caf8be581371a8c2e\firebase-iid-20.0.2\AndroidManifest.xml:42:25-78
+172            </intent-filter>
+173        </receiver>
+174
+175        <provider
+175-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+176            android:name="com.google.firebase.provider.FirebaseInitProvider"
+176-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+177            android:authorities="com.fire.docme.firebaseinitprovider"
+177-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+178            android:exported="false"
+178-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+179            android:initOrder="100" /> <!-- Needs to be explicitly declared on P+ -->
+179-->[com.google.firebase:firebase-common:19.3.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\30a8ea36154cd53c0606fe17d06a0fc9\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+180        <uses-library
+180-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
+181            android:name="org.apache.http.legacy"
+181-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
+182            android:required="false" />
+182-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\3a38a0e405bc736a3eb6ebb3c5aa011f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
+183
+184        <activity
+184-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\cc63a6b09b91895a5650a720ebe1e1fb\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+185            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+185-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\cc63a6b09b91895a5650a720ebe1e1fb\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+186            android:exported="false"
+186-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\cc63a6b09b91895a5650a720ebe1e1fb\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+187            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+187-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\cc63a6b09b91895a5650a720ebe1e1fb\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+188
+189        <meta-data
+189-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\edf6dbf9df8a6dd774b0d7b76a641fe0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+190            android:name="com.google.android.gms.version"
+190-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\edf6dbf9df8a6dd774b0d7b76a641fe0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+191            android:value="@integer/google_play_services_version" />
+191-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\MOUSLIM\.gradle\caches\transforms-2\files-2.1\edf6dbf9df8a6dd774b0d7b76a641fe0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+192    </application>
+193
+194</manifest>

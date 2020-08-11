@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\f95b969d38b6c668807e8686e1c522f2\\play-services-base-17.0.0\\res\\values-zh-rHK\\values.xml",
+                    "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\cc63a6b09b91895a5650a720ebe1e1fb\\play-services-base-17.1.0\\res\\values-zh-rHK\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\25594fedbc310412231561fca8074915\\jetified-play-services-basement-17.0.0\\res\\values-zh-rHK\\values.xml",
+                    "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\edf6dbf9df8a6dd774b0d7b76a641fe0\\jetified-play-services-basement-17.0.0\\res\\values-zh-rHK\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
