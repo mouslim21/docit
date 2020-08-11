@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\myapp\\docme\\build\\url_launcher\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\733257008ca62c5b6ddfd0e885c42d88\\core-1.1.0\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "F:\\myapp\\docme\\build\\url_launcher\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\733257008ca62c5b6ddfd0e885c42d88\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "F:\\myapp\\docme\\build\\url_launcher\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\733257008ca62c5b6ddfd0e885c42d88\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "F:\\myapp\\docme\\build\\url_launcher\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\733257008ca62c5b6ddfd0e885c42d88\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "F:\\myapp\\docme\\build\\url_launcher\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\MOUSLIM\\.gradle\\caches\\transforms-2\\files-2.1\\733257008ca62c5b6ddfd0e885c42d88\\core-1.1.0\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    }
+]
