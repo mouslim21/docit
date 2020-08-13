@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: 55,
                           height: 55,
                         ),
-                        Text("Welcome to Doc it",
+                        Text("Bienvenue à Doc it",
                             style: TextStyle(
                                 fontSize: 25,
                                 letterSpacing: .6,
@@ -185,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                               Icons.vpn_key,
                               color: hintcolor,
                             ),
-                            hintText: 'Password',
+                            hintText: 'Mot de passe',
                           ),
                         ),
                       ),
@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Padding(
                             padding: const EdgeInsets.only(top: 10, right: 32),
                             child: Text(
-                              'Forgot Password ?',
+                              'Mot de passe oublié ?',
                               style: TextStyle(
                                 color: Colors.grey,
                               ),
@@ -221,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                                 }));
                           } else {
                             setState(() {
-                              print("login failed");
+                              print("échec de la connexion ");
                               hintcolor = Colors.red[200];
                               bordercolor = Colors.red[100];
                             });
@@ -239,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
                               BorderRadius.all(Radius.circular(50))),
                           child: Center(
                             child: Text(
-                              'Login'.toUpperCase(),
+                              'Connexion '.toUpperCase(),
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,
@@ -261,7 +261,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           Container(
                             child: Text(
-                              "or connect with",
+                              "ou connectez-vous avec",
                               style: TextStyle(color: Colors.blueGrey.shade700),
                             ),
                             margin:
@@ -334,7 +334,7 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              "new user ?",
+                              "nouveau utilisateur ?",
                               style: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 18,
@@ -345,7 +345,7 @@ class _LoginPageState extends State<LoginPage> {
                               width: 10,
                             ),
                             Text(
-                              "Register now ",
+                              "S'inscrire ",
                               style: TextStyle(
                                   color: Colors.blue[300],
                                   fontSize: 18,
