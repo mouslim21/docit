@@ -109,7 +109,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       padding: const EdgeInsets.only(top: 10,bottom: 20,left:30),
                       child: Container(
                         child: Text(
-                          "To reset your password Enter Your Email Adresse  \n ",
+                          "Pour réinitialiser votre mot de passe, entrez votre e-mail  \n ",
                           style: TextStyle(color: Colors.black, fontSize: 20),
                         ),
                       ),
@@ -175,7 +175,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   BorderRadius.all(Radius.circular(50))),
                               child: Center(
                                 child: Text(
-                                  'Send'.toUpperCase(),
+                                  'Envoyer'.toUpperCase(),
                                   style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
