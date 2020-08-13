@@ -41,7 +41,7 @@ class _SignupPageState extends State<SignupPage> {
     }
   }
 
-  String hinttext = "Enter Email ";
+  String hinttext = "Enterz l'Email ";
 
   Color bordname = Colors.white;
   Color bordemail = Colors.white;
@@ -94,7 +94,7 @@ class _SignupPageState extends State<SignupPage> {
                           SizedBox(
                             width: 10,
                           ),
-                          Text("Welcome to Doc it",
+                          Text("Bienvenue à Doc it",
                               style: TextStyle(
                                   fontSize: 25,
                                   letterSpacing: .6,
@@ -154,7 +154,7 @@ class _SignupPageState extends State<SignupPage> {
                             Icons.person,
                             color: iconName,
                           ),
-                          hintText: 'Enter UserName',
+                          hintText: 'Saisissez votre nom ',
                         ),
                       ),
                     ),
@@ -254,7 +254,7 @@ class _SignupPageState extends State<SignupPage> {
                             Icons.vpn_key,
                             color: iconColorPw,
                           ),
-                          hintText: 'Enter Password',
+                          hintText: 'Entrer le mot de passe',
                         ),
                       ),
                     ),
@@ -304,7 +304,7 @@ class _SignupPageState extends State<SignupPage> {
                             Icons.vpn_key,
                             color: iconColorPw,
                           ),
-                          hintText: 'Confirm Password',
+                          hintText: 'Confirmez le mot de passe',
                         ),
                       ),
                     ),
@@ -317,7 +317,7 @@ class _SignupPageState extends State<SignupPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10, right: 32),
                           child: Text(
-                            'Do you have an accounte?',
+                            'Avez-vous un compte?',
                             style: TextStyle(
                               color: Colors.grey,
                             ),
@@ -370,7 +370,7 @@ class _SignupPageState extends State<SignupPage> {
                             BorderRadius.all(Radius.circular(50))),
                         child: Center(
                           child: Text(
-                            'Sign up'.toUpperCase(),
+                            'S\'insrire'.toUpperCase(),
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
