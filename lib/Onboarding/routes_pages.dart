@@ -33,13 +33,13 @@ class _MyHomePageState extends State<MyHomePage> {
     PageModel(
         color: Colors.blue.shade800.withOpacity(0.8),
         heroAssetPath: 'images/on1.png',
-        title: Text('Doctors',//Hotels
+        title: Text('Médecins',
             style: TextStyle(
               fontWeight: FontWeight.w800,
               color: Colors.white70,
               fontSize: 34.0,
             )),
-        body: Text('Most of doctors in Algeria are  here for you ',
+        body: Text('La plupart des médecins en Algérie sont là pour vous  ',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white70,
@@ -49,14 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
     PageModel(
         color: Color(0xff17DaaF).withOpacity(0.6),
         heroAssetPath: 'images/on2.png',
-        title: Text('Specialties',
+        title: Text('Spécialtiés',
             style: TextStyle(
               fontWeight: FontWeight.w800,
               color: Colors.white70,
               fontSize: 34.0,
             )),
         body: Text(
-            'We carefully verify all specialities before adding them into the app',
+            'Nous vérifions soigneusement toutes les spécialités avant de les ajouter dans l application ',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white70,
@@ -66,13 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
     PageModel(
       color: Colors.blueGrey.shade400.withOpacity(0.8),
       heroAssetPath: 'images/on3.png',
-      title: Text('States',
+      title: Text('Wilayas',
           style: TextStyle(
             fontWeight: FontWeight.w800,
             color: Colors.white70,
             fontSize: 34.0,
           )),
-      body: Text('All  states of our country are here in our app for you',
+      body: Text('Tous les wilayas de notre pays sont ici dans notre application pour vous ',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white70,
