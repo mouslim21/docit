@@ -20,7 +20,7 @@ class _PhonevirifieState extends State<Phonevirifie> {
       codeSent
           ? text =
               "We sent a 6-digit code to your mobile number  . Enter that code to end the registration "
-          : text = "Enter your phone number to continue the proccess ";
+          : text = "Entrez votre numéro de téléphone pour continuer le processus";
     });
     return text;
   }
@@ -85,7 +85,7 @@ class _PhonevirifieState extends State<Phonevirifie> {
                     child: TextFormField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          hintText: 'Enter phone number',
+                          hintText: 'Entrez le numéro de téléphone',
                           icon: Icon(
                             Icons.phone,
                             color: Colors.grey,
@@ -102,7 +102,7 @@ class _PhonevirifieState extends State<Phonevirifie> {
                         child: TextFormField(
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
-                              hintText: 'Enter OTP',
+                              hintText: 'Enterz OTP',
                               icon: Icon(
                                 Icons.sms_failed,
                                 color: Colors.grey,
@@ -118,7 +118,7 @@ class _PhonevirifieState extends State<Phonevirifie> {
                     padding: EdgeInsets.only(left: 25.0, right: 25.0),
                     child: RaisedButton(
                         child: Center(
-                            child: codeSent ? Text('Login') : Text('Verify')),
+                            child: codeSent ? Text('Login') : Text('Vérifier')),
                         onPressed: () {
                           codeSent
                               ? AuthService()
