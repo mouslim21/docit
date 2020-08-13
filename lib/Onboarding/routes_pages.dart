@@ -89,8 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       //Pass pageList and the mainPage route.
       body: FancyOnBoarding(
-        doneButtonText: "Done",
-        skipButtonText: "Skip",
+        doneButtonText: "Suivant ",
+        skipButtonText: "Sauter",
         pageList: pageList,
         onDoneButtonPressed: () =>
             Navigator.of(context).pushReplacementNamed('/login'),
