@@ -34,35 +34,32 @@ class Aboutus_Inner extends StatelessWidget {
           ),
           child: ListView(
             children: <Widget>[
-              new Text2(str: "this app , the best offline medical app",),
+              new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                str: "this app is a result of years of extensive hard work and labor "
-                    ".a group of enterprise full of enthuasiam and ict medical field"
-                    " expusre standbehind its strong .,"
-                    "this app is a result of years of extensive hard work and labor "
-                    ".a group of enterprise full of enthuasiam and ict medical field"
-                    " expusre standbehind its strong .\n  \n"),
+                str: "Docit c'est le résultat des mois de travail labeur et contenu"
+                     ". Un groupe d'étudiants de l'ESI-SBA plein d'enthousiasme et de "
+                     "désir de faire progresser le domaine de la médecine grâce à la technologie a développé cette application .\n  \n"),
               SizedBox(height: 14,),
-              new Text2(str: "this app , the best offline medical app",),
+              new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                  str: "this app is a result of years of extensive hard work and labor "
-                      ".a group of enterprise full of enthuasiam and ict medical field"
-                      " expusre standbehind its strong .,"
-                      "this app is a result of years of extensive hard work and labor "
-                      ".a group of enterprise full of enthuasiam and ict medical field"
-                      " expusre standbehind its strong .\n  \n"),
+                  str: "L'idée  a commencé à répondre à quelques questions simples:"
+
+                      "1. Si vous vous réveilliez au milieu de la nuit pour trouver votre petit en train de pleurer?"
+                         "Et si vous avez accès à une application mobile ou à un portail en ligne où vous trouverez "
+                         "rapidement un pédiatre en activité près de chez vous?"
+                      "2. Quel est le moyen le plus rapide et le plus simple de trouver un médecin dans une "
+                      "spécialité médicale spécifique sur Internet, en particulier lorsque je suis confronté à une urgence? .\n  \n"),
               SizedBox(height: 14,),
-              new Text2(str: "this app , the best offline medical app",),
+              new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                  str: "this app is a result of years of extensive hard work and labor "
-                      ".a group of enterprise full of enthuasiam and ict medical field"
-                      " expusre standbehind its strong .,"
-                      "this app is a result of years of extensive hard work and labor "
-                      ".a group of enterprise full of enthuasiam and ict medical field"
-                      " expusre standbehind its strong .\n  \n"),
+                  str: "Docit fournit les principales fonctionnalités suivantes:"
+
+                        "1. Trouver des médecins et revoir leurs détails tels que: spécialité, exposition, expérience, récompenses… etc."
+                        "2. Options de recherche interactives pour localiser les rendez-vous médicaux correspondants en fonction des médecins,"
+                         "de l'emplacement, de la spécialité ou du domaine médical..\n  \n"),
               SizedBox(height: 14,),
             ],
           ),
