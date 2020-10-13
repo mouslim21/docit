@@ -37,14 +37,13 @@ class Aboutus_Inner extends StatelessWidget {
               new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                str: "Docit c'est le résultat des mois de travail labeur et contenu"
-                     ". Un groupe d'étudiants de l'ESI-SBA plein d'enthousiasme et de "
-                     "désir de faire progresser le domaine de la médecine grâce à la technologie a développé cette application .\n  \n"),
+                str: "Combien cela me coûte-t-il d'utiliser les services Docme?"
+                     "Actuellement Docme gratuitement vous ne payez rien de votre côté .\n  \n"),
               SizedBox(height: 14,),
               new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                  str: "L'idée  a commencé à répondre à quelques questions simples:"
+                  str: "Pourquoi me conseillez-vous d'utiliser cette application ?"
 
                       "1. Si vous vous réveilliez au milieu de la nuit pour trouver votre petit en train de pleurer?"
                          "Et si vous avez accès à une application mobile ou à un portail en ligne où vous trouverez "
@@ -55,7 +54,7 @@ class Aboutus_Inner extends StatelessWidget {
               new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                  str: "Docit fournit les principales fonctionnalités suivantes:"
+                  str: "C'est quoi les principales fonctionnalités de Docme ?"
 
                         "1. Trouver des médecins et revoir leurs détails tels que: spécialité, exposition, expérience, récompenses… etc."
                         "2. Options de recherche interactives pour localiser les rendez-vous médicaux correspondants en fonction des médecins,"
