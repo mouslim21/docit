@@ -21,25 +21,42 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
   final primary = Colors.blue.shade800;//0xff696b9e
   final secondary = Color(0xfff29a94);
   final bGColor = Color(0xfff0f0f0);
+  static  List<String>specialitie =[
+    "Ophtalmologue عيون",
+    "Pneumologue امراض رئة",
+    "Néphrologue كلى ومسالك بولية ",
+    "Cardiologue امراض القلب ",
+    "Gastroentérologue جهاز هضمي ",
+    "Neurologue اعصاب",
+    "ONG انف وانذن وحنجرة",
+    "Dentiste اسنان ",
+    "médecine alternative حجامة و طب بديل",
+    "Radiologue اشعة"
+
+
+
+
+  ];
 
 
 
   Widget appBarTitle = Text(
-    'spécialités',
+    '   Spécialités',
     style: TextStyle(
-      fontStyle: FontStyle.italic, fontSize: 24, fontWeight: FontWeight.w800,),
+      fontStyle: FontStyle.italic, fontSize: 28, fontWeight: FontWeight.w800,),
   );
   Icon actionIcon = new Icon(Icons.search, color: Colors.white,);
   final TextEditingController _searchSpec = new TextEditingController();
   bool _IsSearching;
   String _searchText = "";
   Color searchColor = Colors.red.withOpacity(0.5);
-  List<Spec> listRech = Specialitie().getList();
+  List<int> listRech = [0,1,2,3,4,5,6,7,8,9];
   var _firebaseRef = FirebaseDatabase().reference().child("child");
 
   
   //Monitor the instant change in the search text
   _SpecialitiesListState() {
+
     _searchSpec.addListener(() {
       //for the function of search
       if (_searchSpec.text.isEmpty) {
@@ -47,6 +64,7 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
           searchColor = Color(0xff696b9e).withOpacity(0.5);
           _IsSearching = false;
           _searchText = "";
+          listRech = [0,1,2,3,4,5,6,7,8,9];
 
         });
       }
@@ -56,14 +74,13 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
           _IsSearching = true;
           _searchText = _searchSpec.text;
           //remplir the list
-//
-//          for (int i=1 ; i<Specialitie().getTail() ; i++){
-//            if ( (Specialitie().getName2(i).toLowerCase().contains(_searchText.toLowerCase())) ||
-//                (Specialitie().getName1(i).toLowerCase().contains(_searchText.toLowerCase())) )
-//            {
-//              listRech.add(Specialitie().getList()[i]);
-//            }
-//          }
+           listRech = [];
+          for (int i=0 ; i<specialitie.length; i++){
+            if  (specialitie[i].toLowerCase().contains(_searchText.toLowerCase()))
+            {
+              listRech.add(i);
+            }
+          }
         });
       }
 
@@ -115,14 +132,14 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
                   delegate: SliverChildBuilderDelegate(
                         (BuildContext context, int index) {
                       // print(snap.data.name);
-                      return _searchText == null || _searchText == ""?
-                           buildCard(context, data,index%2):
+                      return buildCard(context,data,listRech,index);/* _searchText == null || _searchText == ""?
+                           buildCard(context, data,index):
                       (data.keys.elementAt(index).toLowerCase()
                           .contains(_searchText.toLowerCase())||data.values.elementAt(index)['name'].
                       toLowerCase()
                           .contains(_searchText.toLowerCase())?buildCard(context, data,index):Container() );
-                    },
-                    childCount:data == null?0: data.keys.toList().length+6,
+                    */},
+                    childCount:data == null?0: listRech.length,
                   ),
                 ),
               )
@@ -134,12 +151,21 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
         ));
   }
 
-  Widget buildCard(BuildContext context,var snap,int index) {
+  Widget buildCard(BuildContext context,var snap,List<int> list , int ind) {
     Map spec = {
-      "drama & laser": "images/m3daa.png",
-      "heart":"images/heart.png"
-    };
+      "Ophtalmologue": "images/عين.png",
+      "Dentiste":"images/اسنان.png",
+      "Cardiologue":"images/قلب.png",
+      "Pneumologue":"images/رئة.png",
+      "ONG":"images/اذن و حنجرة.png",
+      "Gastroentérologue":"images/معدة1.png",
+      "Néphrologue":"images/كلية.png",
+      "médecine alternative":"images/بديل.png",
+      "Radiologue": "images/اشعة.png",
+      "Neurologue":"images/راس.png"
 
+    };
+      int index  = list[ind];
     return GestureDetector(
       onTap:(){
 
@@ -227,15 +253,15 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
       background:  Stack(
       children: <Widget>[
         Container(height: 240,color: Colors.blue.shade800,),
-        Container(height: 70,color: Colors.grey.shade200,
+        Container(height: 80,color: Colors.grey.shade200,
           margin: EdgeInsets.only(top: 220),
 
         ),
         Container(
 
-          margin: EdgeInsets.only(top: 70),
+          margin: EdgeInsets.only(top: 83),
           child: SizedBox(
-              height: 262.0,
+              height: 272.0,
               width: 370.0,
               child: CarouselSlider(
                 options: CarouselOptions(autoPlay: true,enlargeCenterPage: true,),
@@ -282,7 +308,7 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
                     cursorColor: Theme.of(context).primaryColor,
                     style: dropdownMenuItem,
                     decoration: InputDecoration(
-                        hintText: "Search Medical Specialities",
+                        hintText: "Rechercher les spécialités",
                         hintStyle: TextStyle(
                             color: Colors.black38, fontSize: 16),
                         prefixIcon: Material(
@@ -321,9 +347,9 @@ class _SpecialitiesListState extends State<SpecialitiesList> {
     setState(() {
       this.actionIcon = new Icon(Icons.search, color: Colors.white,);
       this.appBarTitle = Text(
-        '',
+        '   Spécialités',
         style: TextStyle(
-          fontStyle: FontStyle.italic, fontSize: 24, fontWeight: FontWeight.w800,),
+          fontStyle: FontStyle.italic, fontSize: 28, fontWeight: FontWeight.w800,),
       );
       _IsSearching = false;
       _searchSpec.clear();

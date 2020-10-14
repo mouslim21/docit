@@ -62,7 +62,7 @@ class _DoctorsListState extends State<DoctorsList> {
             children: <Widget>[
               //build a list of doctors
               Container(
-                padding: EdgeInsets.only(top: 145),
+                padding: EdgeInsets.only(top: 145,right: 20,left: 20),
                 height: MediaQuery.of(context).size.height,
                 width: double.infinity,
                 child: ListView.builder(
@@ -101,9 +101,9 @@ class _DoctorsListState extends State<DoctorsList> {
                       IconButton(
                         // go to Specialitie page
                         onPressed: () {
-                          Route route = MaterialPageRoute(
-                              builder: (context) => SpecialitiesList());
-                          Navigator.pop(context, route);
+//                          Route route = MaterialPageRoute(
+//                              builder: (context) => SpecialitiesList());
+                          Navigator.of(context).pop(context);
                         },
                         icon: Icon(
                           Icons.arrow_back,
@@ -139,7 +139,7 @@ class _DoctorsListState extends State<DoctorsList> {
                           cursorColor: Theme.of(context).primaryColor,
                           style: dropdownMenuItem,
                           decoration: InputDecoration(
-                              hintText: "Search a Doctor ",
+                              hintText: "Rechercher ",
                               hintStyle: TextStyle(
                                   color: Colors.black38, fontSize: 16),
                               prefixIcon: Material(
@@ -229,8 +229,13 @@ class _DoctorsListState extends State<DoctorsList> {
                   ),
                   Row(
                     children: <Widget>[
+                      Icon(
+                        Icons.star,
+                        color: Color(0xfff29a94),
+                        size: 20,
+                      ),
                       SizedBox(
-                        width: 30,
+                        width: 8,
                       ),
                       Text("${listdocs.values.elementAt(index)["exper"]} experience ",
                           style: TextStyle(
@@ -244,11 +249,11 @@ class _DoctorsListState extends State<DoctorsList> {
                     children: <Widget>[
                       Icon(
                         Icons.location_on,
-                        color: secondary,
+                        color: Color(0xfff29a94),
                         size: 20,
                       ),
                       SizedBox(
-                        width: 5,
+                        width: 6,
                       ),
                       Text(listdocs.values.elementAt(index)["wilaya"],
                           style: TextStyle(
@@ -260,10 +265,15 @@ class _DoctorsListState extends State<DoctorsList> {
                   ),
                   Row(
                     children: <Widget>[
-                      SizedBox(
-                        width: 30,
+                      Icon(
+                        Icons.phone,
+                        color: Color(0xfff29a94),
+                        size: 20,
                       ),
-                      Text("${listdocs.values.elementAt(index)["location"]} ",
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text("${listdocs.values.elementAt(index)["number"]} ",
                           style: TextStyle(
                               color: Color(0xff696b9e), fontSize: 13, letterSpacing: .3)),
                     ],

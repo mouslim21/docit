@@ -29,7 +29,7 @@ class _FavorableState extends State<Favorable> {
                   key: ObjectKey(snapshot.data[index]),
                   child: buildCard(context, item),
                   background: Container(
-                    color: Color(0xff5097a4),
+                    color: Colors.blue.shade200,
                   ),
                 );
               },
@@ -156,14 +156,14 @@ class _FavorableState extends State<Favorable> {
                       Row(
                         children: <Widget>[
                           Icon(
-                            Icons.add_location,
+                            Icons.phone,
                             color: Color(0xfff29a94),
                             size: 20,
                           ),
                           SizedBox(
                             width: 5,
                           ),
-                          Text(item["location"],
+                          Text(item["number"],
                               style: TextStyle(
                                   fontFamily: 'Raleway',
                                   color: Color(0xff696b9e),

@@ -7,7 +7,7 @@ class Aboutus_Inner extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
-        title: Text("About Us",
+        title: Text("FAQ",
           style: TextStyle(color: Colors.white,fontSize: 18),
         ),
         leading:  FlatButton(
@@ -37,28 +37,28 @@ class Aboutus_Inner extends StatelessWidget {
               new Text2(str: "                                        ",),
               SizedBox(height: 12,),
               new Text3(
-                str: "Combien cela me coûte-t-il d'utiliser les services Docme?"
-                     "Actuellement Docme gratuitement vous ne payez rien de votre côté .\n  \n"),
-              SizedBox(height: 14,),
+                  str: "- Combien cela me coûte-t-il d'utiliser les services Docit? \n "
+                      "     Actuellement Docit gratuitement vous ne payez rien de votre côté .\n  \n"),
+              SizedBox(height: 5,),
               new Text2(str: "                                        ",),
-              SizedBox(height: 12,),
+              SizedBox(height: 5,),
               new Text3(
-                  str: "Pourquoi me conseillez-vous d'utiliser cette application ?"
+                  str: "- Pourquoi me conseillez-vous d'utiliser cette application ? \n"
 
-                      "1. Si vous vous réveilliez au milieu de la nuit pour trouver votre petit en train de pleurer?"
-                         "Et si vous avez accès à une application mobile ou à un portail en ligne où vous trouverez "
-                         "rapidement un pédiatre en activité près de chez vous?"
-                      "2. Quel est le moyen le plus rapide et le plus simple de trouver un médecin dans une "
-                      "spécialité médicale spécifique sur Internet, en particulier lorsque je suis confronté à une urgence? .\n  \n"),
-              SizedBox(height: 14,),
+                      "    1. Si vous vous réveilliez au milieu de la nuit pour trouver votre bébé en train de pleurer? \n"
+                      "    Et si vous avez accès à une application mobile ou à un portail en ligne où vous trouverez "
+                      "    rapidement un pédiatre en activité près de chez vous? \n"
+                      "    2. Quel est le moyen le plus rapide et le plus simple de trouver un médecin dans une "
+                      "    spécialité médicale spécifique sur Internet, en particulier lorsque je suis confronté à une urgence? .\n  \n"),
+              SizedBox(height: 5,),
               new Text2(str: "                                        ",),
-              SizedBox(height: 12,),
+              SizedBox(height: 5,),
               new Text3(
-                  str: "C'est quoi les principales fonctionnalités de Docme ?"
+                  str: "- C'est quoi les principales fonctionnalités de Docit ? \n"
 
-                        "1. Trouver des médecins et revoir leurs détails tels que: spécialité, exposition, expérience, récompenses… etc."
-                        "2. Options de recherche interactives pour localiser les rendez-vous médicaux correspondants en fonction des médecins,"
-                         "de l'emplacement, de la spécialité ou du domaine médical..\n  \n"),
+                      "   1. Trouver des médecins et revoir leurs détails tels que: spécialité, exposition, expérience, récompenses… etc. \n"
+                      "   2. Options de recherche interactives pour localiser les rendez-vous médicaux correspondants en fonction des médecins,"
+                      "   de l'emplacement, de la spécialité ou du domaine médical..\n  \n"),
               SizedBox(height: 14,),
             ],
           ),
@@ -74,11 +74,11 @@ class Text3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(str,
-    textAlign: TextAlign.left,
-    style: TextStyle(
-      color: Colors.grey,
-      fontSize: 16,
-    ),);
+      textAlign: TextAlign.left,
+      style: TextStyle(
+        color: Colors.grey,
+        fontSize: 16,
+      ),);
   }
 }
 
@@ -89,10 +89,10 @@ class Text2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(str,
-    textAlign: TextAlign.center,
-    style: TextStyle(color: Colors.blueGrey,
-    fontSize: 24,
-    ),
+      textAlign: TextAlign.center,
+      style: TextStyle(color: Colors.blueGrey,
+        fontSize: 24,
+      ),
     );
   }
 }

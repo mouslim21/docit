@@ -154,7 +154,7 @@ class HomePageState extends State<HomePage> {
           child: Container(
               child: Text(restaurantName,
                 style: TextStyle(
-                    color: Color(0xff6200ee),
+                    color: Colors.blue.shade800,
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold),
               )),
@@ -242,7 +242,7 @@ class HomePageState extends State<HomePage> {
       width: MediaQuery.of(context).size.width,
       child: GoogleMap(
         mapType: MapType.normal,
-        initialCameraPosition:  CameraPosition(target: LatLng(40.712776, -74.005974), zoom: 12),
+        initialCameraPosition:  CameraPosition(target: LatLng(35.914436, 4.895395), zoom: 12),
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
@@ -261,8 +261,8 @@ class HomePageState extends State<HomePage> {
 }
 
 Marker gramercyMarker = Marker(
-  markerId: MarkerId('gramercy'),
-  position: LatLng(40.738380, -73.988426),
+  markerId: MarkerId('hopital'),
+  position: LatLng(35.904436, 4.898395),
   infoWindow: InfoWindow(title: 'Gramercy Tavern'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,
@@ -271,15 +271,15 @@ Marker gramercyMarker = Marker(
 
 Marker bernardinMarker = Marker(
   markerId: MarkerId('bernardin'),
-  position: LatLng(40.761421, -73.981667),
-  infoWindow: InfoWindow(title: 'Le Bernardin'),
+  position: LatLng(35.904426, 4.891835),
+  infoWindow: InfoWindow(title: 'Le hopital'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,
   ),
 );
 Marker blueMarker = Marker(
-  markerId: MarkerId('bluehill'),
-  position: LatLng(40.732128, -73.999619),
+  markerId: MarkerId('hopital'),
+  position: LatLng(35.904436, 4.898395),
   infoWindow: InfoWindow(title: 'Blue Hill'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,
@@ -289,24 +289,24 @@ Marker blueMarker = Marker(
 //New York Marker
 
 Marker newyork1Marker = Marker(
-  markerId: MarkerId('newyork1'),
-  position: LatLng(40.742451, -74.005959),
+  markerId: MarkerId('hopital'),
+  position: LatLng(35.904436, 4.898395),
   infoWindow: InfoWindow(title: 'Los Tacos'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,
   ),
 );
 Marker newyork2Marker = Marker(
-  markerId: MarkerId('newyork2'),
-  position: LatLng(40.729640, -73.983510),
+  markerId: MarkerId('hopital'),
+  position: LatLng(35.904456, 4.898395),
   infoWindow: InfoWindow(title: 'Tree Bistro'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,
   ),
 );
 Marker newyork3Marker = Marker(
-  markerId: MarkerId('newyork3'),
-  position: LatLng(40.719109, -74.000183),
+  markerId: MarkerId('hopital'),
+  position: LatLng(35.904436, 4.898395),
   infoWindow: InfoWindow(title: 'Le Coucou'),
   icon: BitmapDescriptor.defaultMarkerWithHue(
     BitmapDescriptor.hueViolet,

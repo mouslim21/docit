@@ -49,7 +49,7 @@ class Specialitie{
 
  //1
     [Doctor(name : "Dr.Zakria bouchelaghem", grad :"Consultan dermatologist" , experience:"10 years" ,wilaya :"mascara" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),
-      Doctor(name : "Dr. Mohamed Nasri", grad :"derma & laser" , experience:"16 years" ,wilaya :"setif" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),
+       Doctor(name : "Dr. Mohamed Nasri", grad :"derma & laser" , experience:"16 years" ,wilaya :"setif" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),
       Doctor(name : "Dr.Hamza Korbaa", grad :"Gynecology" , experience:"36 years" ,wilaya :"alger" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),
       Doctor(name : "Dr.Zakria chergui", grad :"Ent" , experience:"66 years" ,wilaya :"batna" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),
       Doctor(name : "Dr.Mohamed réda aced ", grad :"Pathology" , experience:"12 years" ,wilaya :"annaba" , location :" next the hight school" ,photo :"images/ph9.jpeg" ,),

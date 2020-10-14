@@ -6,7 +6,7 @@ import 'package:docme/modal.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:docme/Splash/extension.dart';
 import 'package:photo_view/photo_view.dart';
 import 'doctors.dart';
@@ -62,6 +62,13 @@ print(await readdata());
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              launch("tel:"+info['number']);
+            },
+            backgroundColor: Colors.white,
+            child: Icon(Icons.phone,color: Colors.blue.shade800,),
+          ),
           body:Column(
             children: <Widget>[
               Expanded(
@@ -389,13 +396,13 @@ boxShadow: [
                       Divider(color: Colors.blueGrey.shade200,),
                       ListTile(
                         leading: Icon(Icons.school,color: Colors.blue.shade800,),
-                        title: Text("Graduation"),
+                        title: Text("Type"),
                         subtitle: Text(info["grad"]),
                       ),
                       Divider(color: Colors.blueGrey.shade200,),
                       ListTile(
                         leading: Icon(Icons.access_time,color: Colors.blue.shade800,),
-                        title: Text("Today timing\n"),
+                        title: Text("Les horaires de travail \n"),
                         subtitle: Text(info['timing']),
                       ),
                       Divider(color: Colors.blueGrey.shade200,),
@@ -409,7 +416,7 @@ boxShadow: [
                         stream: _firebaseRef.onValue,
                         builder: (context,snap){
                           return  ListTile(
-                            title: Text("Recomended by"),
+                            title: Text("Recomandé par "),
                             leading: Icon(Icons.star,color: Colors.blue.shade800,),
                             subtitle: Text("${snap.data.snapshot.value}"),
                           );
@@ -439,8 +446,9 @@ boxShadow: [
                 child: Container(
                     color: Colors.grey.shade200,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        SizedBox(width: 15,),
                         FlatButton(
                           padding: EdgeInsets.only(
                             top: 8,
@@ -449,79 +457,103 @@ boxShadow: [
                             left: 25,
                           ),
                           color: Colors.blue.shade800,
+
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)
                           ),
-                          onPressed: () {},
-                          child: Text("Make an appointment", style:TextStyle( fontSize: 18,
+                    onPressed: ()async{
+                      var ref = FirebaseDatabase.instance.reference().child('child/Radiologue/doctors/doc1/reco');
+                      await ref.once().then((data) async => {
+                        await ref.set((await readdata())==false?data.value + 1:data.value-1),
+                      });
+                      adddata();
+                      bool a = (await readdata())==true;
+                      showDialog(
+                          context: context,builder: (BuildContext context){
+                        return AlertDialog(
+                          content: Text(!a?"Maintenant ce médcin recommandé par vous.":
+                          "Maintenant ce médcin n'est pas recommandé par vous.",
+                            style: GoogleFonts.asap(fontSize: 20,fontWeight: FontWeight.w400),
+                          ),
+                          actions: <Widget>[
+                            FlatButton(onPressed: (){
+                              Navigator.pop(context);
+                            }, child: Text("ok",
+                                style: GoogleFonts.hind(fontSize: 20,fontWeight: FontWeight.w600,)
+                            ))
+                          ],
+                        );});},
+                          child: Text("Soutenez le Médecin", style:TextStyle( fontSize: 18,
                               color: Colors.white),
                           ),
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        GestureDetector(
-                          onTap: ()async{
-                                 var ref = FirebaseDatabase.instance.reference().child('child/drama & laser/doctors/doc1/reco');
-                                await ref.once().then((data) async => {
-                                  await ref.set((await readdata())==false?data.value + 1:data.value-1),
-                                });
-                                adddata();
-                                bool a = (await readdata())==true;
-                            showDialog(
-                              context: context,builder: (BuildContext context){
-                            return AlertDialog(
-                              content: Text(!a?"Maintenant ce médcin recommandé par vous.":
-                              "Maintenant ce médcin n'est pas recommandé par vous.",
-                                style: GoogleFonts.asap(fontSize: 20,fontWeight: FontWeight.w400),
-                              ),
-                              actions: <Widget>[
-                                FlatButton(onPressed: (){
-                                  Navigator.pop(context);
-                                }, child: Text("ok",
-                                    style: GoogleFonts.hind(fontSize: 20,fontWeight: FontWeight.w600,)
-                                ))
-                              ],
-                            );});},
+                        SizedBox(width: 80,),
+
+//                        SizedBox(
+//                          width: 5,
+//                        ),
+//                        GestureDetector(
 //                          onTap: ()async{
-//
-//
-//                            print("fffffffffffffff");
-//
-//                                var ref = FirebaseDatabase.instance.reference().child('child/drama & laser/doctors/doc1/reco');
+//                                 var ref = FirebaseDatabase.instance.reference().child('child/drama & laser/doctors/doc1/reco');
 //                                await ref.once().then((data) async => {
 //                                  await ref.set((await readdata())==false?data.value + 1:data.value-1),
 //                                });
 //                                adddata();
-//
-//                          },
-                          child: Container(
-                            height: 45,
-                            width: 45,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white.withAlpha(150)
-                            ),
-                            child: Icon(Icons.add, color: Colors.blue.shade800,),
-                          )
-                              //.ripple((){
-                          //}, borderRadius:BorderRadius.circular(10), ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 12,top: 3,bottom: 3,left: 5),
-                          height: 45,
-                          width: 45,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xffb8bfce).withAlpha(150)
-                          ),
-                          child: Icon(Icons.call, color: Colors.green.shade800,),
-                        ).ripple((){
-                          call("tel:"+info["number"]);
-                        }, borderRadius:BorderRadius.circular(10), ),
-                        SizedBox(
-                          width: 10,
-                        ),
+//                                bool a = (await readdata())==true;
+//                            showDialog(
+//                              context: context,builder: (BuildContext context){
+//                            return AlertDialog(
+//                              content: Text(!a?"Maintenant ce médcin recommandé par vous.":
+//                              "Maintenant ce médcin n'est pas recommandé par vous.",
+//                                style: GoogleFonts.asap(fontSize: 20,fontWeight: FontWeight.w400),
+//                              ),
+//                              actions: <Widget>[
+//                                FlatButton(onPressed: (){
+//                                  Navigator.pop(context);
+//                                }, child: Text("ok",
+//                                    style: GoogleFonts.hind(fontSize: 20,fontWeight: FontWeight.w600,)
+//                                ))
+//                              ],
+//                            );});},
+////                          onTap: ()async{
+////
+////
+////                            print("fffffffffffffff");
+////
+////                                var ref = FirebaseDatabase.instance.reference().child('child/drama & laser/doctors/doc1/reco');
+////                                await ref.once().then((data) async => {
+////                                  await ref.set((await readdata())==false?data.value + 1:data.value-1),
+////                                });
+////                                adddata();
+////
+////                          },
+//                          child: Container(
+//                            height: 45,
+//                            width: 45,
+//                            decoration: BoxDecoration(
+//                                borderRadius: BorderRadius.circular(10),
+//                                color: Colors.white.withAlpha(150)
+//                            ),
+//                            child: Icon(Icons.add, color: Colors.blue.shade800,),
+//                          )
+//                              //.ripple((){
+//                          //}, borderRadius:BorderRadius.circular(10), ),
+//                        ),
+//                        Container(
+//                          margin: EdgeInsets.only(right: 12,top: 3,bottom: 3,left: 5),
+//                          height: 45,
+//                          width: 45,
+//                          decoration: BoxDecoration(
+//                              borderRadius: BorderRadius.circular(10),
+//                              color: Color(0xffb8bfce).withAlpha(150)
+//                          ),
+//                          child: Icon(Icons.call, color: Colors.green.shade800,),
+//                        ).ripple((){
+//                          call("tel:"+info["number"]);
+//                        }, borderRadius:BorderRadius.circular(10), ),
+//                        SizedBox(
+//                          width: 10,
+//                        ),
                       ],
                     )
                 ),

@@ -9,22 +9,34 @@ import 'about_us/about_us.dart';
 import 'about_us/contact_us.dart';
 import 'home/profil.dart';
 import 'home/map.dart';
+import 'login/authservice.dart';
 import 'login/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
-void main() => runApp(MaterialApp(
-  color: Colors.blue.shade800,
-  home: Onboarding(),
-));
+ Future<void> main()async{
+   WidgetsFlutterBinding.ensureInitialized();
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   var onb = prefs.getString('onb');
+   var email = prefs.getString('email');
+   var isnew = prefs.getBool("isnew");
+   prefs.setBool('isnew', true);
+   print(email);
+   runApp(MaterialApp(
+     color: Colors.blue.shade800,
+     home:onb==null? Onboarding():(email == null ? LoginPage() : Myapp()) ,
+   ));
+ }
 
 
 class myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+     // debugShowCheckedModeBanner: false,
       //theme: ThemeData(primarySwatch: Colors.blue.shade800, fontFamily: 'Nunito'),
-      home: Myapp(),
+      home: AuthService().handleAuth(),
+      //Myapp(),
     );
   }
 }
@@ -44,13 +56,13 @@ class _MyappState extends State<Myapp> {
       body: cont,
       bottomNavigationBar: CurvedNavigationBar(
         index: 1,
-        height: 50,
+        height: 58,
         buttonBackgroundColor: Colors.blue.shade900,
         backgroundColor: Colors.grey[200],
         items: <Widget>[
           Icon(Icons.favorite_border),
           Icon(Icons.home),
-          Icon(Icons.contact_phone)
+          Icon(Icons.settings)
         ],
         onTap: (index){
           setState(() {

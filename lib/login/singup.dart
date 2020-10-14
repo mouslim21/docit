@@ -1,6 +1,9 @@
+import 'package:docme/Onboarding/fancy_page.dart';
+import 'package:docme/Onboarding/routes_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
 
@@ -62,343 +65,339 @@ class _SignupPageState extends State<SignupPage> {
   // }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      colorFilter: ColorFilter.srgbToLinearGamma(),
-                      image: AssetImage("images/signup.png"),
-                      fit: BoxFit.fill),
-                  borderRadius:
-                  BorderRadius.only(bottomLeft: Radius.circular(90)),
-                ),
-                alignment: Alignment.topCenter,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
-                      child: Row(
-                        children: <Widget>[
-                          Image.asset(
-                            "images/logo.png",
-                            width: 55,
-                            height: 55,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text("Bienvenue à Doc it",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  letterSpacing: .6,
-                                  fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height / 1.95,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      height: 45,
-                      padding: EdgeInsets.only(
-                          top: 4, left: 16, right: 16, bottom: 4),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          border: Border.all(
-                            width: 2,
-                            color: bordname,
-                          ),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.black12, blurRadius: 5)
-                          ]),
-                      child: TextField(
-                        onChanged: (_name) {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        onTap: () {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        cursorColor: iconName,
-                        controller: _name,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          icon: Icon(
-                            Icons.person,
-                            color: iconName,
-                          ),
-                          hintText: 'Saisissez votre nom ',
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      height: 45,
-                      margin: EdgeInsets.only(top: 15),
-                      padding: EdgeInsets.only(
-                          top: 4, left: 16, right: 16, bottom: 4),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          border: Border.all(
-                            width: 2,
-                            color: bordemail,
-                          ),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.black12, blurRadius: 5)
-                          ]),
-                      child: TextField(
-                        onChanged: (_email) {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        onTap: () {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        keyboardType: TextInputType.emailAddress,
-                        cursorColor: iconEmail,
-                        controller: _email,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          icon: Icon(
-                            Icons.email,
-                            color: iconEmail,
-                          ),
-                          hintText: hinttext,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      height: 45,
-                      margin: EdgeInsets.only(top: 15),
-                      padding: EdgeInsets.only(
-                          top: 4, left: 16, right: 16, bottom: 4),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          border: Border.all(
-                            width: 2,
-                            color: bordercolorpw,
-                          ),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.black12, blurRadius: 5)
-                          ]),
-                      child: TextField(
-                        onChanged: (_password) {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        onTap: () {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        cursorColor: bordercolorpw,
-                        obscureText: true,
-                        controller: _password,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          icon: Icon(
-                            Icons.vpn_key,
-                            color: iconColorPw,
-                          ),
-                          hintText: 'Entrer le mot de passe',
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      height: 45,
-                      margin: EdgeInsets.only(top: 15),
-                      padding: EdgeInsets.only(
-                          top: 4, left: 16, right: 16, bottom: 4),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          border: Border.all(
-                            width: 2,
-                            color: bordercolorpw,
-                          ),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.black12, blurRadius: 5)
-                          ]),
-                      child: TextField(
-                        onChanged: (_password2) {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        onTap: () {
-                          setState(() {
-                            bordname = Colors.white;
-                            iconName = Colors.grey;
-                            bordemail = Colors.white;
-                            iconEmail = Colors.grey;
-                            bordercolorpw = Colors.white;
-                            iconColorPw = Colors.grey;
-                          });
-                        },
-                        obscureText: true,
-                        cursorColor: bordercolorpw,
-                        controller: _password2,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          icon: Icon(
-                            Icons.vpn_key,
-                            color: iconColorPw,
-                          ),
-                          hintText: 'Confirmez le mot de passe',
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 32),
-                          child: Text(
-                            'Avez-vous un compte?',
-                            style: TextStyle(
-                              color: Colors.grey,
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 2-23,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        colorFilter: ColorFilter.srgbToLinearGamma(),
+                        image: AssetImage("images/signup.png"),
+                        fit: BoxFit.fill),
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(90)),
+                  ),
+                  alignment: Alignment.topCenter,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5, left: 10),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              "images/logo.png",
+                              width: 55,
+                              height: 55,
                             ),
-                          ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Bienvenue à Doc it",
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    letterSpacing: .6,
+                                    fontWeight: FontWeight.bold)),
+                          ],
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () async {
-                        final email = _email.text.toString().trim();
-                        final password = _password.text.toString().trim();
-                        final password2 = _password2.text.toString().trim();
-                        final name = _name.text.toString().trim();
-                        bool result = false;
-                        if (password == password2 &&
-                            name.length > 3 &&
-                            password.length > 7) {
-                          result = await sign(name, email, password);
-                        } else {
-                          setState(() {
-                            bordercolorpw = Colors.red[100];
-                            iconColorPw = Colors.red[200];
-                          });
-                        }
-                        if (name.length < 3) {
-                          bordname = Colors.red[100];
-                          iconName = Colors.red[200];
-                        }
-                        if (email == null || email == "") {
-                          bordemail = Colors.red[100];
-                          iconEmail = Colors.red[200];
-                        }
-                        if (result) {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                                return Myapp();
-                              }));
-                        }
-
-                      },
-                      child: Container(
-                        height: 45,
+                    ],
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height / 1.95,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
                         width: MediaQuery.of(context).size.width / 1.2,
-                        margin: EdgeInsets.only(top: 16),
+                        height: 45,
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
                         decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Colors.blue[900], Colors.blue[800]],
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            border: Border.all(
+                              width: 2,
+                              color: bordname,
                             ),
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(50))),
-                        child: Center(
-                          child: Text(
-                            'S\'insrire'.toUpperCase(),
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextField(
+                          onChanged: (_name) {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          onTap: () {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          cursorColor: iconName,
+                          controller: _name,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.person,
+                              color: iconName,
+                            ),
+                            hintText: 'Saisissez votre nom ',
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                  ],
-                ),
-              )
-            ],
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: 45,
+                        margin: EdgeInsets.only(top: 15),
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            border: Border.all(
+                              width: 2,
+                              color: bordemail,
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextField(
+                          onChanged: (_email) {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          onTap: () {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          keyboardType: TextInputType.emailAddress,
+                          cursorColor: iconEmail,
+                          controller: _email,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.email,
+                              color: iconEmail,
+                            ),
+                            hintText: hinttext,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: 45,
+                        margin: EdgeInsets.only(top: 15),
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            border: Border.all(
+                              width: 2,
+                              color: bordercolorpw,
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextField(
+                          onChanged: (_password) {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          onTap: () {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          cursorColor: bordercolorpw,
+                          obscureText: true,
+                          controller: _password,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.vpn_key,
+                              color: iconColorPw,
+                            ),
+                            hintText: 'Entrer le mot de passe',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: 45,
+                        margin: EdgeInsets.only(top: 15),
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            border: Border.all(
+                              width: 2,
+                              color: bordercolorpw,
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextField(
+                          onChanged: (_password2) {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          onTap: () {
+                            setState(() {
+                              bordname = Colors.white;
+                              iconName = Colors.grey;
+                              bordemail = Colors.white;
+                              iconEmail = Colors.grey;
+                              bordercolorpw = Colors.white;
+                              iconColorPw = Colors.grey;
+                            });
+                          },
+                          obscureText: true,
+                          cursorColor: bordercolorpw,
+                          controller: _password2,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.vpn_key,
+                              color: iconColorPw,
+                            ),
+                            hintText: 'Confirmez le mot de passe',
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10, right: 32),
+                            child: Text(
+                              'Avez-vous un compte?',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () async {
+                          final email = _email.text.toString().trim();
+                          final password = _password.text.toString().trim();
+                          final password2 = _password2.text.toString().trim();
+                          final name = _name.text.toString().trim();
+                          bool result = false;
+                          if (password == password2 &&
+                              name.length > 3 &&
+                              password.length > 7) {
+                            result = await sign(name, email, password);
+                          } else {
+                            setState(() {
+                              bordercolorpw = Colors.red[100];
+                              iconColorPw = Colors.red[200];
+                            });
+                          }
+                          if (name.length < 3) {
+                            bordname = Colors.red[100];
+                            iconName = Colors.red[200];
+                          }
+                          if (email == null || email == "") {
+                            bordemail = Colors.red[100];
+                            iconEmail = Colors.red[200];
+                          }
+                          if (result) {
+                            SharedPreferences prefs = await SharedPreferences.getInstance();
+                            prefs.setString('email',_email.text.toString().trim() );
+                            Navigator.pushReplacement(context,
+                                MaterialPageRoute(builder: (context) {
+                              return Myapp();
+                            }));
+                          }
+                        },
+                        child: Container(
+                          height: 45,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          margin: EdgeInsets.only(top: 16),
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Colors.blue[900], Colors.blue[800]],
+                              ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50))),
+                          child: Center(
+                            child: Text(
+                              'S\'inscrire'.toUpperCase(),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
 
 //import 'package:flutter/material.dart';
 ////import 'package:firebase_auth/firebase_auth.dart';

@@ -85,7 +85,7 @@ class _PhonevirifieState extends State<Phonevirifie> {
                     child: TextFormField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                          hintText: 'Entrez le numéro de téléphone',
+                          hintText: '+213 (le numero) sans 0',
                           icon: Icon(
                             Icons.phone,
                             color: Colors.grey,
@@ -122,8 +122,8 @@ class _PhonevirifieState extends State<Phonevirifie> {
                         onPressed: () {
                           codeSent
                               ? AuthService()
-                                  .signInWithOTP(smsCode, verificationId)
-                              : verifyPhone(phoneNo);
+                                  .signInWithOTP(smsCode, verificationId,context)
+                              : verifyPhone(phoneNo,context);
                         }))
               ],
             ),
@@ -131,9 +131,9 @@ class _PhonevirifieState extends State<Phonevirifie> {
     );
   }
 
-  Future<void> verifyPhone(phoneNo) async {
+  Future<void> verifyPhone(phoneNo,BuildContext context) async {
     final PhoneVerificationCompleted verified = (AuthCredential authResult) {
-      AuthService().signIn(authResult);
+      AuthService().signIn(authResult,context);
     };
 
     final PhoneVerificationFailed verificationfailed =

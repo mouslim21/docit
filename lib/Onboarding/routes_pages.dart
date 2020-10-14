@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../main.dart';
 import 'page_model.dart';
 import 'package:docme/login/login.dart';
 
@@ -31,51 +33,55 @@ class _MyHomePageState extends State<MyHomePage> {
   //Create a list of PageModel to be set on the onBoarding Screens.
   final pageList = [
     PageModel(
-        color: Colors.blue.shade800.withOpacity(0.8),
+        color: Colors.blueGrey.shade50,
+        //        color: Colors.blueGrey.shade50,
         heroAssetPath: 'images/on1.png',
         title: Text('Médecins',
             style: TextStyle(
               fontWeight: FontWeight.w800,
-              color: Colors.white70,
+              color: Colors.black87,
               fontSize: 34.0,
             )),
         body: Text('La plupart des médecins en Algérie sont là pour vous  ',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white70,
+              color: Colors.black87,
               fontSize: 18.0,
             )),
         iconAssetPath: 'images/png/key.png'),
     PageModel(
-        color: Color(0xff17DaaF).withOpacity(0.6),
+        color: Colors.blueGrey.shade50,
+        //color: Color(0xff17DaaF).withOpacity(0.6),
         heroAssetPath: 'images/on2.png',
         title: Text('Spécialtiés',
             style: TextStyle(
               fontWeight: FontWeight.w800,
-              color: Colors.white70,
+              color: Colors.black87,
               fontSize: 34.0,
             )),
         body: Text(
-            'Nous vérifions soigneusement toutes les spécialités avant de les ajouter dans l application ',
+            "Nous vérifions soigneusement toutes les spécialités avant de les ajouter dans l'application ",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white70,
+              color: Colors.black87,
               fontSize: 18.0,
             )),
         iconAssetPath: 'images/png/wallet.png'),
     PageModel(
-      color: Colors.blueGrey.shade400.withOpacity(0.8),
+      color: Colors.blueGrey.shade50,
+
+//      color: Colors.blueGrey.shade400.withOpacity(0.8),
       heroAssetPath: 'images/on3.png',
       title: Text('Wilayas',
           style: TextStyle(
             fontWeight: FontWeight.w800,
-            color: Colors.white70,
+            color: Colors.black87,
             fontSize: 34.0,
           )),
       body: Text('Tous les wilayas de notre pays sont ici dans notre application pour vous ',
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.white70,
+            color: Colors.black87,
             fontSize: 18.0,
           )),
       iconAssetPath: 'images/png/shopping_cart.png',
@@ -86,6 +92,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    RuternPage()async{
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('onb',"_email.text.toString().trim()" );
+      return             Navigator.of(context).pushReplacementNamed('/login');
+    }
     return Scaffold(
       //Pass pageList and the mainPage route.
       body: FancyOnBoarding(
@@ -93,10 +104,41 @@ class _MyHomePageState extends State<MyHomePage> {
         skipButtonText: "Sauter",
         pageList: pageList,
         onDoneButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('/login'),
+        RuternPage(),
         onSkipButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('/login'),
+        RuternPage(),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

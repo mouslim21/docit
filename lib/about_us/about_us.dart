@@ -1,9 +1,10 @@
+import 'package:docme/login/login.dart';
 import 'package:flutter/material.dart';
 import 'contact_us.dart';
 import 'FAQ.dart';
 import 'about_inner_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 class About_us extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,21 +71,78 @@ Container _buildHeader(BuildContext context) {
                 SizedBox(
                   height: 50.0,
                 ),
-                Text(
-                  "FTW Team",
-                  style: GoogleFonts.slabo27px(fontSize: 18,fontWeight: FontWeight.bold),
+                Center(
+                  child: Text(
+                    "Nous soutenir ? ",
+                    style: GoogleFonts.slabo27px(fontSize: 20,fontWeight: FontWeight.bold),
 
+                  ),
                 ),
                 SizedBox(
                   height: 5.0,
                 ),
-                Center(
-                  child: Text(
-                      "Zakria Bouchelaghem\nMohammed Nasri\nHamza Korbaa\nMouslim Messaoudi\nZkaria Chergui ",
-                    style: GoogleFonts.asap(fontSize: 16,fontWeight: FontWeight.w400),
-
-                  ),
-                ),
+                 Center(
+                   child: Row(
+                     children: <Widget>[
+                       SizedBox(height: 90,),
+//                       SizedBox(width: 15,),
+                     SizedBox(width: 45,),
+                       Expanded(
+                         child: FlatButton(
+                           child: Container(
+                             padding: EdgeInsets.only(right: 10,left: 10),
+                             height: 60,
+                             width: 60,
+                             child: Image(image: AssetImage("images/play.png")),
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(12),
+                               color: Colors.white,
+                               boxShadow: [BoxShadow(
+                                 color:Colors.blueGrey.shade800,
+                                 blurRadius: 1,
+                                 spreadRadius: 0.1
+                               )],
+//                               image: DecorationImage(
+//                                   image:
+//                                   AssetImage("images/ins.png"))
+                             ),
+                           ),
+                         ),
+                       ),
+                       //SizedBox(width: 35,),
+                       Expanded(
+                         child: FlatButton(
+                           child: Container(
+                             padding: EdgeInsets.only(right: 10,left: 10),
+                             height: 60,
+                             width: 60,
+                             child: Image(image: AssetImage("images/app.png")),
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(12),
+                               color: Colors.white,
+                               boxShadow: [BoxShadow(
+                                   color:Colors.blueGrey.shade800,
+                                   blurRadius: 1,
+                                   spreadRadius: 0.1
+                               )],
+//                               image: DecorationImage(
+//                                   image:
+//                                   AssetImage("images/ins.png"))
+                             ),
+                           ),
+                         ),
+                       ),
+                       SizedBox(width: 45,),
+                     ],
+                   ),
+                 ),
+//                Center(
+//                  child: Text(
+//                      "Zakria Bouchelaghem\nMohammed Nasri\nHamza Korbaa\nMouslim Messaoudi\nZkaria Chergui ",
+//                    style: GoogleFonts.asap(fontSize: 16,fontWeight: FontWeight.w400),
+//
+//                  ),
+//                ),
                 SizedBox(
                   height: 0.0,
                 ),
@@ -149,7 +207,7 @@ class About_us_card extends StatelessWidget {
           Icons.arrow_forward_ios,
           color: Colors.white,
         ),
-        onTap: () {
+        onTap: ()async {
           if (icon == Icons.contact_phone) {
             Route route = MaterialPageRoute(builder: (context) => Contact());
             Navigator.push(context, route);
@@ -160,6 +218,14 @@ class About_us_card extends StatelessWidget {
             Navigator.push(context, route);
           }
           if (icon == Icons.highlight_off) {
+            // clearing shared prefrenses data
+            Route route =
+            MaterialPageRoute(builder: (context) => LoginPage());
+            Navigator.pushReplacement(context, route);
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.remove('email');
+              print("hellow world");
+
            //signout
           }
         },

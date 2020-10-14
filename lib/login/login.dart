@@ -4,6 +4,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'firebase_auth.dart';
 import 'phone.dart';
 import 'singup.dart';
 import '../main.dart';
@@ -20,10 +22,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([]);
-    super.initState();
+   // SystemChrome.setEnabledSystemUIOverlays([]);
+    //super.initState();
   }
-  Future<FirebaseUser> _gSignin() async {
+  /*Future<FirebaseUser> _gSignin() async {
 
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
@@ -38,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     print("signed in " + user.displayName);
     return user;
   }
-
+*/
 
   log(String email, String Password) async {
     FirebaseAuth _auth = FirebaseAuth.instance;
@@ -65,11 +67,12 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
+            //height: 1800,
             child: Column(
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 10,
+                  height: MediaQuery.of(context).size.height / 13,
                   child: Container(
                     alignment: Alignment.bottomCenter,
                     child: Row(
@@ -102,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height / 2.1,
+                  height: MediaQuery.of(context).size.height / 2.1+40,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: <Widget>[
@@ -217,8 +220,10 @@ class _LoginPageState extends State<LoginPage> {
                           if (user != null) {
                             Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (context) {
-                                  return myapp();
+                                  return Myapp();
                                 }));
+                            SharedPreferences prefs = await SharedPreferences.getInstance();
+                            prefs.setString('email',_email.text.toString().trim() );
                           } else {
                             setState(() {
                               print("échec de la connexion ");
@@ -278,7 +283,26 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           GestureDetector(
-                            onTap: () {_gSignin().then((FirebaseUser user) => print(user)).catchError((e) => print(e));} ,
+                            onTap: () async{
+                              //_gSignin().then((FirebaseUser user) => print(user)).catchError((e) => print(e));
+                              bool res = await AuthProvider().loginWithGoogle();
+                              if (!res){
+                                print ("probleme de login avec google");
+                              }{
+                                SharedPreferences prefs = await SharedPreferences.getInstance();
+                                prefs.setString('email',_email.text.toString().trim() );
+                                Navigator.pushReplacement(context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return myapp();
+                                    }));
+                              }
+
+
+
+
+
+
+                            } ,
 
 
                             child: Container(
