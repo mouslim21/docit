@@ -1,23 +1,4 @@
-# docme
+# DocMe 
 
-A new Flutter application.
+DocMe is an academic project aimed at streamlining the appointment scheduling process for patients and providing a platform for discovering available doctors. This application simplifies the healthcare experience by offering an efficient and user-friendly way for patients to connect with healthcare providers.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# DOC-IT" 
-"# DOC-IT" 
-"# docit" 
-"# docit" 
-"# docit" 
-"# docit" 
-"# docit" 
